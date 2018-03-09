@@ -17,17 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// List books
+// Books
 Route::get('books','BooksController@index');
-
-// List single book
 Route::get('book/{id}','BooksController@show');
-
-// Create new book
 Route::post('book','BooksController@store');
-
-// Update book
 Route::put('book','BooksController@store');
-
-// Delete book
 Route::delete('book/{id}','BooksController@destroy');
+
+// Authors
+Route::get('authors','AuthorsController@index');
+Route::get('author/{id}','AuthorsController@show');
+Route::post('author','AuthorsController@store');
+Route::put('author','AuthorsController@store');
+Route::delete('author/{id}','AuthorsController@destroy');
